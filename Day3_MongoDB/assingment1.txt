@@ -1,0 +1,166 @@
+> db.movie.updateOne( {title:"KGF"},
+... {
+... $set: {
+... writer:"Prashnath"}
+... {year:2018}
+... })
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):5:0
+> db.movie.updateOne( {title:"KGF"}, { $set: { writer:"Prashnath"}  })
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.movie.updateOne( {title:"KGF"}, { $set: { year:2018}  })
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.movie.updateOne( {title:"KGF2"}, { $set: { writer:"Ayush"}  })
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+>> db.movie.deleteOne({writer:"noname"})
+{ "acknowledged" : true, "deletedCount" : 0 }
+> db.movie.deleteOne({title:"Pulp Fiction"})
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.createCollection("users")
+{ "ok" : 1 }
+> db.users.insertOne({name:"Ayush"},{username:"ayush123"},{year:2019})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb2b4884fec048d90a3eb")
+}
+> db.users.insertOne({name:"Singh"},{username:"singh123"},{year:2019})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb2cc884fec048d90a3ec")
+}
+> db.users.insertOne({name:"Ram"},{username:"Ram123"},{year:2018})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb2e5884fec048d90a3ed")
+}
+> db.users.insertOne({name:"Shyam"},{username:"Shyam123"},{year:2020})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb2f9884fec048d90a3ee")
+}
+>> db.createCollection("Reaction")
+{ "ok" : 1 }
+> db.Reaction.insertOne({name:"Ayush"},{Feedback:"bad"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb39f884fec048d90a3ef")
+}
+> db.Reaction.insertOne({name:"Ayush"},{Feedback:"bad"},{title:"Bahubali"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb3e5884fec048d90a3f0")
+}
+> db.Reaction.insertOne({name:"Singh"},{Feedback:"average"},{title:"Bahubali"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb3f9884fec048d90a3f1")
+}
+> db.Reaction.insertOne({name:"Ram"},{Feedback:"good"},{title:"KGF"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb415884fec048d90a3f2")
+}
+> db.Reaction.insertOne({name:"Shyam"},{Feedback:"good"},{title:"KGF"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb420884fec048d90a3f3")
+}
+>> db.createCollection("Comments")
+{ "ok" : 1 }
+> db.Comments.insertOne({name:"Ayush"},{cmt:"a good movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb49e884fec048d90a3f4")
+}
+> db.Comments.insertOne({name:"Singh"},{cmt:"a very good movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb4af884fec048d90a3f5")
+}
+> db.Comments.insertOne({name:"Shyam"},{cmt:"a very bad movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb4c1884fec048d90a3f6")
+}
+> db.Comments.insertOne({name:"Ram"},{cmt:"a  bad movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb4ce884fec048d90a3f7")
+}
+>> db.createCollection("Comments")
+{ "ok" : 1 }
+> db.Comments.insertOne({name:"Ayush"},{cmt:"a good movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb49e884fec048d90a3f4")
+}
+> db.Comments.insertOne({name:"Singh"},{cmt:"a very good movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb4af884fec048d90a3f5")
+}
+> db.Comments.insertOne({name:"Shyam"},{cmt:"a very bad movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb4c1884fec048d90a3f6")
+}
+> db.Comments.insertOne({name:"Ram"},{cmt:"a  bad movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb4ce884fec048d90a3f7")
+}
+>> db.createCollection("Comments")
+{ "ok" : 1 }
+> db.Comments.insertOne({name:"Ayush"},{cmt:"a good movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb49e884fec048d90a3f4")
+}
+> db.Comments.insertOne({name:"Singh"},{cmt:"a very good movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb4af884fec048d90a3f5")
+}
+> db.Comments.insertOne({name:"Shyam"},{cmt:"a very bad movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb4c1884fec048d90a3f6")
+}
+> db.Comments.insertOne({name:"Ram"},{cmt:"a  bad movie"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("61ebb4ce884fec048d90a3f7")
+}
+>> db.users.find()
+{ "_id" : ObjectId("61ebb2b4884fec048d90a3eb"), "name" : "Ayush" }
+{ "_id" : ObjectId("61ebb2cc884fec048d90a3ec"), "name" : "Singh" }
+{ "_id" : ObjectId("61ebb2e5884fec048d90a3ed"), "name" : "Ram" }
+{ "_id" : ObjectId("61ebb2f9884fec048d90a3ee"), "name" : "Shyam" }
+> db.Reaction.find()
+{ "_id" : ObjectId("61ebb39f884fec048d90a3ef"), "name" : "Ayush" }
+{ "_id" : ObjectId("61ebb3e5884fec048d90a3f0"), "name" : "Ayush" }
+{ "_id" : ObjectId("61ebb3f9884fec048d90a3f1"), "name" : "Singh" }
+{ "_id" : ObjectId("61ebb415884fec048d90a3f2"), "name" : "Ram" }
+{ "_id" : ObjectId("61ebb420884fec048d90a3f3"), "name" : "Shyam" }
+> db.Comments.find()
+{ "_id" : ObjectId("61ebb49e884fec048d90a3f4"), "name" : "Ayush" }
+{ "_id" : ObjectId("61ebb4af884fec048d90a3f5"), "name" : "Singh" }
+{ "_id" : ObjectId("61ebb4c1884fec048d90a3f6"), "name" : "Shyam" }
+{ "_id" : ObjectId("61ebb4ce884fec048d90a3f7"), "name" : "Ram" }
+> db.movie.find()
+{ "_id" : ObjectId("61eba621884fec048d90a3e3"), "title" : "Fight Club", "writer" : "Chuck Palahniuko", "year" : 1999, "actors" : [ "Bred Pitt", "Edward Norton" ] }
+{ "_id" : ObjectId("61eba791884fec048d90a3e5"), "title" : "Pulp Fiction", "writer" : "Quentin Tatantino", "year" : 2009, "actors" : [ "Bred Pitt", "Diane Kruger", "Eli Roth" ] }
+{ "_id" : ObjectId("61eba802884fec048d90a3e6"), "title" : "Bahubali", "writer" : "Raja Moulbi", "year" : 2019, "actors" : [ "Prabhas", "Tamanna", "Katapa" ] }
+{ "_id" : ObjectId("61eba81d884fec048d90a3e7"), "title" : "Bahubali2", "writer" : "Raja Moulbi", "year" : 2020, "actors" : [ "Prabhas", "Tamanna", "Katapa" ] }
+{ "_id" : ObjectId("61eba887884fec048d90a3e8"), "title" : "KGF", "writer" : "Prashnath", "year" : 2018, "actors" : [ "Rocky", "hansome" ] }
+{ "_id" : ObjectId("61eba8a3884fec048d90a3e9"), "title" : "KGF2", "writer" : "Ayush", "year" : 2022, "actors" : [ "Rocky", "Sanjay Dutt" ] }
+{ "_id" : ObjectId("61eba947884fec048d90a3ea"), "title" : "Avtar", "writer" : "nomane2", "year" : 2002, "actors" : [ "Blueman", "Bluewomen" ] }
+>> db.Comments.find({name:"Ayush"})
+{ "_id" : ObjectId("61ebb49e884fec048d90a3f4"), "name" : "Ayush" }
+> db.Reaction.find({name:"Ayush"})
+{ "_id" : ObjectId("61ebb39f884fec048d90a3ef"), "name" : "Ayush" }
+{ "_id" : ObjectId("61ebb3e5884fec048d90a3f0"), "name" : "Ayush" }
+> db.movie.find({Writer:"Prashnath"})
+> db.movie.find({writer:"Prashnath"})
+{ "_id" : ObjectId("61eba887884fec048d90a3e8"), "title" : "KGF", "writer" : "Prashnath", "year" : 2018, "actors" : [ "Rocky", "hansome" ] }
+>
